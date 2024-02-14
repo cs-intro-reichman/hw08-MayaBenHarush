@@ -72,17 +72,7 @@ class PlayList {
         return count;
     }
 
-    /** Returns the index of the track with the given title in this list.
-     *  If such a track is not found, returns -1. */
-    //public int indexOf(String title) {
-    //    title.toLowerCase();
-    //    for( int i = 0; i < size; i++){
-    //        if(tracks[i]!= null && title == tracks[i].getTitle().toLowerCase()){
-    //            return i;
-    //        }
-    //    }
-    //    return -1;
-    //}
+    
     public int indexOf(String title) {
         for (int i = 0; i < size ; i++)
        {
@@ -107,23 +97,15 @@ class PlayList {
     public boolean add(int i, Track track) {
         if(size < maxSize && i >= 0 && i< maxSize){
             for( int j =maxSize-1 ; j >= i ; j --){   
-                if(j == i){
-                    tracks[j+1]=tracks[j];
-                    tracks[j]= track;
-                    
-                }
-                else{
-                    tracks[j+1]=tracks[j];
-                }         
+                
+                    tracks[j+1]=tracks[j]; 
   
             }
+            tracks[i]= track;
             size++;
-            
+            return true;
         }
-        else{
-            return false;
-        }
-        return true;
+        return false;
     }
      
     /** Removes the track in the given index from this list.
