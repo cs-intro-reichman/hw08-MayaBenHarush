@@ -74,15 +74,29 @@ class PlayList {
 
     /** Returns the index of the track with the given title in this list.
      *  If such a track is not found, returns -1. */
+    //public int indexOf(String title) {
+    //    title.toLowerCase();
+    //    for( int i = 0; i < size; i++){
+    //        if(tracks[i]!= null && title == tracks[i].getTitle().toLowerCase()){
+    //            return i;
+    //        }
+    //    }
+    //    return -1;
+    //}
     public int indexOf(String title) {
-        title.toLowerCase();
-        for( int i = 0; i < size; i++){
-            if(tracks[i]!= null && title == tracks[i].getTitle().toLowerCase()){
-                return i;
-            }
-        }
-        return -1;
-    }
+        for (int i = 0; i < size ; i++)
+       {
+           if (tracks[i] != null)
+           {
+               String str = tracks[i].getTitle();
+               if (str.equals(title))
+               {
+                   return i;
+               }
+           }
+       }
+       return -1;
+   }
 
     /** Inserts the given track in index i of this list. For example, if the list is
      *  (t5, t3, t1), then just after add(1,t4) the list becomes (t5, t4, t3, t1).
