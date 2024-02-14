@@ -77,7 +77,7 @@ class PlayList {
     public int indexOf(String title) {
         title.toLowerCase();
         for( int i = 0; i < size; i++){
-            if(title == tracks[i].getTitle().toLowerCase()){
+            if(tracks[i]!= null && title == tracks[i].getTitle().toLowerCase()){
                 return i;
             }
         }
