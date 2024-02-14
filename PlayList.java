@@ -118,9 +118,12 @@ class PlayList {
   
             }
             size++;
-            return true;
+            
         }
-        return false;
+        else{
+            return false;
+        }
+        return true;
     }
      
     /** Removes the track in the given index from this list.
