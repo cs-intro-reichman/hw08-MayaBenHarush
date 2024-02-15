@@ -132,8 +132,16 @@ class PlayList {
      *  If such a track is not found, or the list is empty, or the given index
      *  is negative or too big for this list, does nothing. */
     public void remove(String title) {
-        int index = indexOf(title);
-        remove(index);
+        if(size > 0 ){
+            
+            for (int i = 0; i<size; i++){
+                if( tracks[i].getTitle().toLowerCase().equals(title.toLowerCase())){
+                    remove(i);
+                }
+            }
+            size--;
+            
+        }
     }
 
     /** Removes the first track from this list. If the list is empty, does nothing. */
