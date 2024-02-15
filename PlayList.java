@@ -170,40 +170,21 @@ class PlayList {
      *  minimum value (5) when starting the search from index 2.  
      *  If start is negative or greater than size - 1, returns -1.
      */
-    //private int minIndex(int start) {
-
-        //if( start>=0 && start< size-1 && size > 0 ){
-          //  int min= tracks[start].getDuration();
-           // int index = start;
-            //for( int i = start + 1; i < size; i++){
-              //  int dur = tracks[i].getDuration();
-                //if(dur< min){
-                  //  min= dur;
-                    //index= i;
-                //}
-
-            //}
-            //return index;
-        //}
-        //return -1;
-   // }
     private int minIndex(int start) {
-        int index = start;
-        if(start < 0 || start > size - 1){
+
+        if (start < 0 || start >= size){
             return -1;
         }
-        
-        int test = tracks[start].getDuration();
-        for( int i = start + 1; i < size; i++){
-            if(test > tracks[i].getDuration()){
-                test = tracks[i].getDuration();
-                index = i;
+        int minIndex = start;
+        for (int i = start + 1; i < size; i++){
+            if (tracks[i].getDuration() < tracks[minIndex].getDuration()){
+                minIndex = i;
             }
         }
+        return minIndex;
     
-        return index;
     }
-
+   
     /** Returns the title of the shortest track in this list. 
      *  If the list is empty, returns null. */
     public String titleOfShortestTrack() {
