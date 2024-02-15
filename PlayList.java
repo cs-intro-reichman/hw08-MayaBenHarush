@@ -136,12 +136,13 @@ class PlayList {
      *  is negative or too big for this list, does nothing. */
     public void remove(String title) {
         if(size > 0 ){
-            size--;
-            for (int i = 0; i< maxSize; i++){
+            
+            for (int i = 0; i<size; i++){
                 if( tracks[i].getTitle().toLowerCase().equals(title.toLowerCase())){
                     remove(i);
                 }
             }
+            size--;
             
         }
     }
