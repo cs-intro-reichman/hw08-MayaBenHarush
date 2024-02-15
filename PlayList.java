@@ -91,13 +91,16 @@ class PlayList {
      *  is full, does nothing and returns false. Otherwise, inserts the track and
      *  returns true. */
     public boolean add(int i, Track track) {
+        
         if (i <= this.size && i >= 0 && this.size <= this.maxSize) {
             if (i == this.size) {
                 this.add(track);
-            } else {
+            } 
+            else {
                 for (int j = this.size; j > i; j--) {
                     this.tracks[j] = this.tracks[j - 1];
                 }
+
                 this.tracks[i] = track;
                 this.size++;
             }
