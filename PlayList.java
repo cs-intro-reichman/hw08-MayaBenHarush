@@ -188,7 +188,7 @@ class PlayList {
     /** Returns the title of the shortest track in this list. 
      *  If the list is empty, returns null. */
     public String titleOfShortestTrack() {
-        if(size == 0){
+        if(size <= 0){
             return null;
         }
         return tracks[minIndex(0)].getTitle();
@@ -204,7 +204,7 @@ class PlayList {
         // Uses the selection sort algorithm,  
         // calling the minIndex method in each iteration.
         //// replace this statement with your code
-        for(int i = 0; i < size; i++){
+        for(int i = 0; i < size-1; i++){
             int min = minIndex(i);
             if(min!=-1)
             {
