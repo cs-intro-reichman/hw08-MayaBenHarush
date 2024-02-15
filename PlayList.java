@@ -176,7 +176,7 @@ class PlayList {
      */
     private int minIndex(int start) {
 
-        if( start>=0 && start< size && size > 0 ){
+        if( start>=0 && start< size-1 && size > 0 ){
             System.err.println(start);
             int min= tracks[start].getDuration();
             int index = start;
