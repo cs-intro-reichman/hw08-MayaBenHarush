@@ -177,11 +177,9 @@ class PlayList {
     private int minIndex(int start) {
 
         if( start>=0 && start< size-1 && size > 0 ){
-            System.err.println(start);
             int min= tracks[start].getDuration();
             int index = start;
             for( int i = start + 1; i < size; i++){
-                System.err.println(i);
                 if(tracks[i].getDuration()< min){
                     min= tracks[i].getDuration();
                     index= i;
@@ -214,10 +212,12 @@ class PlayList {
         //// replace this statement with your code
         for(int i = 0; i < size; i++){
             int min = minIndex(i);
-            Track tmp_track = tracks[i];
-            tracks[i] = tracks[min];
-            tracks[min]= tmp_track;
-
+            if(min!=-1)
+            {
+                Track tmp_track = tracks[i];
+                tracks[i] = tracks[min];
+                tracks[min]= tmp_track;
+            }
         }
     }
 }
